@@ -16,8 +16,8 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <exec executable="cmd" dir="${dir}" failonerror="true">
-                <arg line="/C ${wrapper} ${task} ${args}" />
+            <exec executable="cmd" dir="@{dir}" failonerror="true">
+                <arg line="/C @{wrapper} @{task} @{args}" />
             </exec>
         </sequential>
     </macrodef>
@@ -30,7 +30,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="classes" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="classes" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 
@@ -41,7 +41,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="jar" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="jar" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 
@@ -52,7 +52,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="testClasses" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="testClasses" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 
@@ -63,7 +63,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="test" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="test" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 
@@ -75,7 +75,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="clean" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="clean" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 
@@ -86,7 +86,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="javadoc" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="javadoc" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 </project>

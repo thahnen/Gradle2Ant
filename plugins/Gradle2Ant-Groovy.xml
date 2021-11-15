@@ -18,7 +18,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="compileGroovy" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="compileGroovy" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 
@@ -29,7 +29,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="compileTestGroovy" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="compileTestGroovy" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 
@@ -41,7 +41,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="groovydoc" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="groovydoc" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 </project>

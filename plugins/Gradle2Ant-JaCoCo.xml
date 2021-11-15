@@ -18,7 +18,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="jacocoTestReport" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="jacocoTestReport" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 
@@ -29,7 +29,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="jacocoTestCoverageVerification" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="jacocoTestCoverageVerification" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 </project>

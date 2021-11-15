@@ -18,7 +18,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="testSeparateJVMSequentially" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="testSeparateJVMSequentially" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 
@@ -29,7 +29,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="testSeparateJVMInParallel" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="testSeparateJVMInParallel" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 </project>

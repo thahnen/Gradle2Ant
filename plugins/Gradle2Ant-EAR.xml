@@ -18,7 +18,7 @@
         <attribute name="dir" default="${current.dir}" />
 
         <sequential>
-            <gradle task="ear" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+            <gradle task="ear" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
         </sequential>
     </macrodef>
 </project>
