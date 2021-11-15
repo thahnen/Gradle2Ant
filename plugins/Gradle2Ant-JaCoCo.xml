@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Gradle2Ant-JaCoCo">
+    <description>
+        Call Gradle from Ant - Gradle JaCoCo plugin!
+    </description>
+
+    <!-- General properties! -->
+    <dirname property="current.dir" file="${ant.file}" />
+
+    <!-- import general Gradle2Ant.xml library -->
+    <import file="../Gradle2Ant.xml" />
+
+
+    <!-- Gradle task "jacocoTestReport" to create JaCoCo coverage report on "test" task -->
+    <macrodef name="gradle.jacocoTestReport" description="Gradle task 'jacocoTestReport'">
+        <attribute name="args" default="" />
+        <attribute name="wrapper" default="gradle" />
+        <attribute name="dir" default="${current.dir}" />
+
+        <sequential>
+            <gradle task="jacocoTestReport" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "jacocoTestCoverageVerification" to verify JaCoCo coverage report against specified rules -->
+    <macrodef name="gradle.jacocoTestCoverageVerification" description="Gradle task 'jacocoTestCoverageVerification'">
+        <attribute name="args" default="" />
+        <attribute name="wrapper" default="gradle" />
+        <attribute name="dir" default="${current.dir}" />
+
+        <sequential>
+            <gradle task="jacocoTestCoverageVerification" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+        </sequential>
+    </macrodef>
+</project>

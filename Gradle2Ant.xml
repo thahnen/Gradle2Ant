@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="Gradle2Ant">
     <description>
-        Call Gradle from Ant - only supporting Windows yet!
+        Call Gradle from Ant - Using Gradle Java plugin directly!
     </description>
 
     <!-- General properties! -->
@@ -22,17 +22,6 @@
         </sequential>
     </macrodef>
 
-
-    <!-- Gradle task "clean" to clean workspace -->
-    <macrodef name="gradle.clean" description="Gradle task 'clean'">
-        <attribute name="args" default="" />
-        <attribute name="wrapper" default="gradle" />
-        <attribute name="dir" default="${current.dir}" />
-
-        <sequential>
-            <gradle task="clean" args="${args}" wrapper="${wrapper}" dir="${dir}" />
-        </sequential>
-    </macrodef>
 
     <!-- Gradle task "classes" to compile classes -->
     <macrodef name="gradle.classes" description="Gradle task 'classes'">
@@ -56,17 +45,6 @@
         </sequential>
     </macrodef>
 
-    <!-- Gradle task "war" to create WAR web archive -->
-    <macrodef name="gradle.war" description="Gradle task 'war'">
-        <attribute name="args" default="" />
-        <attribute name="wrapper" default="gradle" />
-        <attribute name="dir" default="${current.dir}" />
-
-        <sequential>
-            <gradle task="war" args="${args}" wrapper="${wrapper}" dir="${dir}" />
-        </sequential>
-    </macrodef>
-
     <!-- Gradle task "testClasses" to compile test classes -->
     <macrodef name="gradle.testClasses" description="Gradle task 'testClasses'">
         <attribute name="args" default="" />
@@ -86,6 +64,29 @@
 
         <sequential>
             <gradle task="test" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+        </sequential>
+    </macrodef>
+
+
+    <!-- Gradle task "clean" to clean workspace -->
+    <macrodef name="gradle.clean" description="Gradle task 'clean'">
+        <attribute name="args" default="" />
+        <attribute name="wrapper" default="gradle" />
+        <attribute name="dir" default="${current.dir}" />
+
+        <sequential>
+            <gradle task="clean" args="${args}" wrapper="${wrapper}" dir="${dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "javadoc" to create Java documentation -->
+    <macrodef name="gradle.javadoc" description="Gradle task 'javadoc'">
+        <attribute name="args" default="" />
+        <attribute name="wrapper" default="gradle" />
+        <attribute name="dir" default="${current.dir}" />
+
+        <sequential>
+            <gradle task="javadoc" args="${args}" wrapper="${wrapper}" dir="${dir}" />
         </sequential>
     </macrodef>
 </project>
