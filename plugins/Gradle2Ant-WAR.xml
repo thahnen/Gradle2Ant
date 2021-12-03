@@ -8,17 +8,22 @@
     <dirname property="current.dir" file="${ant.file}" />
 
     <!-- import general Gradle2Ant.xml library -->
-    <import file="../Gradle2Ant.xml" />
+    <import file="${current.dir}/../Gradle2Ant.xml" />
 
 
     <!-- Gradle task "war" to create WAR web archive -->
     <macrodef name="gradle.war" description="Gradle task 'war'">
-        <attribute name="args" default="" />
-        <attribute name="wrapper" default="gradle" />
-        <attribute name="dir" default="${current.dir}" />
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
 
         <sequential>
-            <gradle task="war" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
+            <gradle task="war"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
         </sequential>
     </macrodef>
 </project>

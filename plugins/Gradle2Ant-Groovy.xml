@@ -8,40 +8,55 @@
     <dirname property="current.dir" file="${ant.file}" />
 
     <!-- import general Gradle2Ant.xml library -->
-    <import file="../Gradle2Ant.xml" />
+    <import file="${current.dir}/../Gradle2Ant.xml" />
 
 
     <!-- Gradle task "compileGroovy" to compile Groovy source files after Java code -->
     <macrodef name="gradle.compileGroovy" description="Gradle task 'compileGroovy'">
-        <attribute name="args" default="" />
-        <attribute name="wrapper" default="gradle" />
-        <attribute name="dir" default="${current.dir}" />
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
 
         <sequential>
-            <gradle task="compileGroovy" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
+            <gradle task="compileGroovy"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
         </sequential>
     </macrodef>
 
     <!-- Gradle task "compileTestGroovy" to compile Groovy test source files after Java code -->
     <macrodef name="gradle.compileTestGroovy" description="Gradle task 'compileTestGroovy'">
-        <attribute name="args" default="" />
-        <attribute name="wrapper" default="gradle" />
-        <attribute name="dir" default="${current.dir}" />
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
 
         <sequential>
-            <gradle task="compileTestGroovy" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
+            <gradle task="compileTestGroovy"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
         </sequential>
     </macrodef>
 
 
     <!-- Gradle task "groovydoc" to create Groovy documentation (equivalten to "javadoc") -->
     <macrodef name="gradle.groovydoc" description="Gradle task 'groovydoc'">
-        <attribute name="args" default="" />
-        <attribute name="wrapper" default="gradle" />
-        <attribute name="dir" default="${current.dir}" />
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
 
         <sequential>
-            <gradle task="groovydoc" args="@{args}" wrapper="@{wrapper}" dir="@{dir}" />
+            <gradle task="groovydoc"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
         </sequential>
     </macrodef>
 </project>

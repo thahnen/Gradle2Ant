@@ -3,6 +3,8 @@
 Simple Ant libraries to enable running Gradle tasks from within Ant build scripts. Ant macros used to enable user to
 directly use them in simple Ant targets using really simple parameters!
 
+For more information take a look [here](https://github.com/thahnen/Gradle2Ant)!
+
 ## Gradle2Ant.xml
 
 Defines the basic *gradle* macro used in all other macros througout this Ant library and the ones below!
