@@ -51,6 +51,7 @@ Abstract macros based on the tasks provided by the Gradle Groovy plugin when usi
 
 - compileGroovy (macro *gradle.compileGroovy*)
 - compileTestGroovy (macro *gradle.compileTestGroovy*)
+- groovydoc (macro *gradle.groovydoc*)
 
 Can be imported into any Ant build script using:
 ```xml

@@ -8,7 +8,7 @@
     <dirname property="current.dir" file="${ant.file}" />
 
     <!-- import general Gradle2Ant.xml library -->
-    <import file="${current.dir}/../Gradle2Ant.xml" />
+    <import file="../Gradle2Ant.xml" />
 
 
     <!-- Gradle task "war" to create WAR web archive -->
