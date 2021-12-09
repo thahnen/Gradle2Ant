@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Gradle2Ant-Application">
+    <description>
+        Call Gradle from Ant - Gradle Application plugin!
+    </description>
+
+    <!-- General properties! -->
+    <dirname property="current.dir" file="${ant.file}" />
+
+    <!-- import general Gradle2Ant.xml library -->
+    <import file="../Gradle2Ant.xml" />
+
+
+    <!-- Gradle task "run" to start an application -->
+    <macrodef name="gradle.run" description="Gradle task 'run'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="run"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "startScripts" to create OS specific scripts -->
+    <macrodef name="gradle.startScripts" description="Gradle task 'startScripts'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="startScripts"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "installDist" to install the application -->
+    <macrodef name="gradle.installDist" description="Gradle task 'installDist'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="installDist"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "distZip" to create ZIP distribution -->
+    <macrodef name="gradle.distZip" description="Gradle task 'distZip'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="distZip"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "distTar" to create TAR distribution -->
+    <macrodef name="gradle.distTar" description="Gradle task 'distTar'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="distTar"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+</project>

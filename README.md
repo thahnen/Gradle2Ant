@@ -1,7 +1,7 @@
 # Gradle2Ant
 
-Simple Ant libraries to enable running Gradle tasks from within Ant build scripts. Ant macros used to enable user to
-directly use them in simple Ant targets using really simple parameters!
+Simple Ant libraries to enable running Gradle tasks from within Ant build scripts. Ant macros used
+to enable user to directly use them in simple Ant targets using really simple parameters!
 
 For more information take a look [here](https://github.com/thahnen/Gradle2Ant)!
 
@@ -60,8 +60,8 @@ Can be imported into any Ant build script using:
 
 ## plugins/Gradle2Ant-JaCoCo.xml
 
-Abstract macros based on the tasks provided by the Gradle JaCoCo plugin when checking code for coverage based on the
-results of the Gradle tasks of type *Test*:
+Abstract macros based on the tasks provided by the Gradle JaCoCo plugin when checking code for
+coverage based on the results of the Gradle tasks of type *Test*:
 
 - jacocoTestReport (macro *gradle.jacocoTestReport*)
 - jacocoTestCoverageVerification (macro *gradle.jacocoTestCoverageVerification*)
@@ -73,8 +73,8 @@ Can be imported into any Ant build script using:
 
 ## plugins/Gradle2Ant-SonarQube.xml
 
-Abstract macro based on the task provided by the unofficial Gradle SonarQube plugin when running a static code analysis
-on the given source code:
+Abstract macro based on the task provided by the unofficial Gradle SonarQube plugin when running a
+static code analysis on the given source code:
 
 - sonarqube (macro *gradle.sonarqube*)
 
@@ -85,8 +85,8 @@ Can be imported into any Ant build script using:
 
 ## plugins/Gradle2Ant-RunTestsSeparateJVM.xml
 
-Abstract macros based on the tasks provided by the unofficial Gradle RunTestsSeparateJVMPlugin plugin when running
-jUnit tests eather in separate JVM sequentially or in parallel
+Abstract macros based on the tasks provided by the unofficial Gradle RunTestsSeparateJVMPlugin
+plugin when running jUnit tests eather in separate JVM sequentially or in parallel
 
 - testSeparateJVMSequentially (macro *gradle.testSeparateJVMSequentially*)
 - testSeparateJVMInParallel (macro *gradle.testSeparateJVMInParallel*)
@@ -94,4 +94,20 @@ jUnit tests eather in separate JVM sequentially or in parallel
 Can be imported into any Ant build script using:
 ```xml
 <import file="${path.to.libraries}/plugins/Gradle2Ant-RunTestsSeparateJVM.xml" />
+```
+
+## plugins/Gradle2Ant-Application.xml
+
+Abstract macros based on the tasks provided by the Gradle Application for running and creating
+(distributable) applications:
+
+- run (macro *gradle.run*)
+- startScripts (macro *gradle.startScripts*)
+- installDist (macro *gradle.installDist*)
+- distZip (macro *gradle.distZip*)
+- distTar (macro *gradle.distTar*)
+
+Can be imported into any Ant build script using:
+```xml
+<import file="${path.to.libraries}/plugins/Gradle2Ant-Application.xml" />
 ```
