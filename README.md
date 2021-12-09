@@ -58,6 +58,19 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/plugins/Gradle2Ant-Groovy.xml" />
 ```
 
+## plugins/Gradle2Ant-Scala.xml
+
+Abstract macros based on the tasks provided by the Gradle Scala plugin when using Scala when developing:
+
+- compileScala (macro *gradle.compileScala*)
+- compileTestScala (macro *gradle.compileTestScala*)
+- scaladoc (macro *gradle.scaladoc*)
+
+Can be imported into any Ant build script using:
+```xml
+<import file="${path.to.libraries}/plugins/Gradle2Ant-Scala.xml" />
+```
+
 ## plugins/Gradle2Ant-JaCoCo.xml
 
 Abstract macros based on the tasks provided by the Gradle JaCoCo plugin when checking code for
