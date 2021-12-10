@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Gradle2Ant-IDEA">
+    <description>
+        Call Gradle from Ant - Gradle IDEA plugin!
+    </description>
+
+    <!-- General properties! -->
+    <dirname property="current.dir" file="${ant.file}" />
+
+    <!-- import general Gradle2Ant.xml library -->
+    <import file="../Gradle2Ant.xml" />
+
+
+    <!-- Gradle task "idea" to generate IntelliJ IDEA configuration files -->
+    <macrodef name="gradle.idea" description="Gradle task 'idea'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="idea"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "openIdea" to generate IntelliJ IDEA configuration files and open IDE -->
+    <macrodef name="gradle.openIdea" description="Gradle task 'openIdea'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="openIdea"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "cleanIdea" to remove (generated) IntelliJ IDEA configuration files -->
+    <macrodef name="gradle.cleanIdea" description="Gradle task 'cleanIdea'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="cleanIdea"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+</project>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Gradle2Ant-VisualStudio">
+    <description>
+        Call Gradle from Ant - Gradle Visual Studio plugin!
+    </description>
+
+    <!-- General properties! -->
+    <dirname property="current.dir" file="${ant.file}" />
+
+    <!-- import general Gradle2Ant.xml library -->
+    <import file="../Gradle2Ant.xml" />
+
+
+    <!-- Gradle task "visualStudio" to generate Visual Studio configuration files -->
+    <macrodef name="gradle.visualStudio" description="Gradle task 'visualStudio'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="visualStudio"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "openVisualStudio" to generate Visual Studio configuration files and open IDE -->
+    <macrodef name="gradle.openVisualStudio" description="Gradle task 'openVisualStudio'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="openVisualStudio"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "cleanVisualStudio" to remove (generated) Visual Studio configuration files -->
+    <macrodef name="gradle.cleanVisualStudio" description="Gradle task 'cleanVisualStudio'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="cleanVisualStudio"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+</project>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Gradle2Ant-XCode">
+    <description>
+        Call Gradle from Ant - Gradle XCode plugin!
+    </description>
+
+    <!-- General properties! -->
+    <dirname property="current.dir" file="${ant.file}" />
+
+    <!-- import general Gradle2Ant.xml library -->
+    <import file="../Gradle2Ant.xml" />
+
+
+    <!-- Gradle task "xcode" to generate XCode configuration files -->
+    <macrodef name="gradle.xcode" description="Gradle task 'xcode'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="xcode"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "openXcode" to generate XCode configuration files and open IDE -->
+    <macrodef name="gradle.openXcode" description="Gradle task 'openXcode'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="openXcode"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
+    <!-- Gradle task "cleanXcode" to remove (generated) XCode configuration files -->
+    <macrodef name="gradle.cleanXcode" description="Gradle task 'cleanXcode'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="cleanXcode"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+</project>
