@@ -9,7 +9,7 @@
     <dirname property="current.dir" file="${ant.file}" />
 
     <!-- import general Gradle2Ant.xml library -->
-    <import file="../Gradle2Ant.xml" />
+    <import file="../../Gradle2Ant.xml" />
 
 
     <!-- Gradle task "testSeparateJVMSequentially" to run jUnit tests in separate JVM sequentially -->

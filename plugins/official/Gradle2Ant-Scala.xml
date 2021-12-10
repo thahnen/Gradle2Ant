@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="Gradle2Ant-Groovy">
+<project name="Gradle2Ant-Scala">
     <description>
-        Call Gradle from Ant - Gradle Groovy plugin!
+        Call Gradle from Ant - Gradle Scala plugin!
     </description>
 
     <!-- General properties! -->
     <dirname property="current.dir" file="${ant.file}" />
 
     <!-- import general Gradle2Ant.xml library -->
-    <import file="../Gradle2Ant.xml" />
+    <import file="../../Gradle2Ant.xml" />
 
 
-    <!-- Gradle task "compileGroovy" to compile Groovy source files after Java code -->
-    <macrodef name="gradle.compileGroovy" description="Gradle task 'compileGroovy'">
+    <!-- Gradle task "compileScala" to compile Scala source files after Java code -->
+    <macrodef name="gradle.compileScala" description="Gradle task 'compileScala'">
         <attribute name="project"   default="" />
         <attribute name="args"      default="" />
         <attribute name="wrapper"   default="gradle" />
         <attribute name="dir"       default="${current.dir}" />
 
         <sequential>
-            <gradle task="compileGroovy"
+            <gradle task="compileScala"
                     project="@{project}"
                     args="@{args}"
                     wrapper="@{wrapper}"
@@ -27,15 +27,15 @@
         </sequential>
     </macrodef>
 
-    <!-- Gradle task "compileTestGroovy" to compile Groovy test source files after Java code -->
-    <macrodef name="gradle.compileTestGroovy" description="Gradle task 'compileTestGroovy'">
+    <!-- Gradle task "compileScalaGroovy" to compile Scala test source files after Java code -->
+    <macrodef name="gradle.compileScalaGroovy" description="Gradle task 'compileScalaGroovy'">
         <attribute name="project"   default="" />
         <attribute name="args"      default="" />
         <attribute name="wrapper"   default="gradle" />
         <attribute name="dir"       default="${current.dir}" />
 
         <sequential>
-            <gradle task="compileTestGroovy"
+            <gradle task="compileScalaGroovy"
                     project="@{project}"
                     args="@{args}"
                     wrapper="@{wrapper}"
@@ -44,15 +44,15 @@
     </macrodef>
 
 
-    <!-- Gradle task "groovydoc" to create Groovy documentation (equivalten to "javadoc") -->
-    <macrodef name="gradle.groovydoc" description="Gradle task 'groovydoc'">
+    <!-- Gradle task "scaladoc" to create Scala documentation (equivalten to "javadoc") -->
+    <macrodef name="gradle.scaladoc" description="Gradle task 'scaladoc'">
         <attribute name="project"   default="" />
         <attribute name="args"      default="" />
         <attribute name="wrapper"   default="gradle" />
         <attribute name="dir"       default="${current.dir}" />
 
         <sequential>
-            <gradle task="groovydoc"
+            <gradle task="scaladoc"
                     project="@{project}"
                     args="@{args}"
                     wrapper="@{wrapper}"
