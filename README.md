@@ -23,7 +23,11 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/Gradle2Ant.xml" />
 ```
 
-## ide/Gradle2Ant-Eclipse.xml
+## Development environment plugins (IDE)
+
+This plugins can be found in the *ide* folder!
+
+#### Gradle2Ant-Eclipse.xml
 
 Abstract macros based on the tasks provided by the Gradle Eclipse plugin for generating Eclipse
 configuration files:
@@ -36,7 +40,7 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/ide/Gradle2Ant-Eclipse.xml" />
 ```
 
-## ide/Gradle2Ant-IDEA.xml
+#### Gradle2Ant-IDEA.xml
 
 Abstract macros based on the tasks provided by the Gradle IDEA plugin for generating IntelliJ IDEA
 configuration files:
@@ -50,7 +54,7 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/ide/Gradle2Ant-IDEA.xml" />
 ```
 
-## ide/Gradle2Ant-VisualStudio.xml
+#### Gradle2Ant-VisualStudio.xml
 
 Abstract macros based on the tasks provided by the Gradle Visual Studio plugin for generating
 Visual Studio configuration files:
@@ -64,7 +68,7 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/ide/Gradle2Ant-VisualStudio.xml" />
 ```
 
-## ide/Gradle2Ant-XCode.xml
+#### Gradle2Ant-XCode.xml
 
 Abstract macros based on the tasks provided by the Gradle XCode plugin for generating XCode
 configuration files:
@@ -78,7 +82,15 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/ide/Gradle2Ant-XCode.xml" />
 ```
 
-## plugins/official/Gradle2Ant-WAR.xml
+## Gradle plugins for other use cases
+
+This plugins can be found in the *plugins* folder!
+
+### Official Gradle plugins
+
+This plugins can be found in the *official* folder!
+
+#### Gradle2Ant-WAR.xml
 
 Abstract macro based on the task provided by the Gradle WAR plugin for creating web archives:
 
@@ -89,7 +101,7 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/plugins/official/Gradle2Ant-WAR.xml" />
 ```
 
-## plugins/official/Gradle2Ant-EAR.xml
+#### Gradle2Ant-EAR.xml
 
 Abstract macro based on the task provided by the Gradle EAR plugin for creating enterprise archives:
 
@@ -100,7 +112,7 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/plugins/official/Gradle2Ant-EAR.xml" />
 ```
 
-## plugins/official/Gradle2Ant-Groovy.xml
+#### Gradle2Ant-Groovy.xml
 
 Abstract macros based on the tasks provided by the Gradle Groovy plugin when using Groovy when developing:
 
@@ -113,7 +125,7 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/plugins/official/Gradle2Ant-Groovy.xml" />
 ```
 
-## plugins/official/Gradle2Ant-Scala.xml
+#### Gradle2Ant-Scala.xml
 
 Abstract macros based on the tasks provided by the Gradle Scala plugin when using Scala when developing:
 
@@ -126,7 +138,7 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/plugins/official/Gradle2Ant-Scala.xml" />
 ```
 
-## plugins/official/Gradle2Ant-Application.xml
+#### Gradle2Ant-Application.xml
 
 Abstract macros based on the tasks provided by the Gradle Application for running and creating
 (distributable) applications:
@@ -142,7 +154,7 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/plugins/official/Gradle2Ant-Application.xml" />
 ```
 
-## plugins/official/Gradle2Ant-JaCoCo.xml
+#### Gradle2Ant-JaCoCo.xml
 
 Abstract macros based on the tasks provided by the Gradle JaCoCo plugin when checking code for
 coverage based on the results of the Gradle tasks of type *Test*:
@@ -155,7 +167,11 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/plugins/official/Gradle2Ant-JaCoCo.xml" />
 ```
 
-## plugins/inofficial/Gradle2Ant-SonarQube.xml
+### Inofficial Gradle plugins
+
+This plugins can be found in the *inofficial* folder!
+
+#### Gradle2Ant-SonarQube.xml
 
 Abstract macro based on the task provided by the unofficial Gradle SonarQube plugin when running a
 static code analysis on the given source code:
@@ -167,7 +183,7 @@ Can be imported into any Ant build script using:
 <import file="${path.to.libraries}/plugins/inofficial/Gradle2Ant-SonarQube.xml" />
 ```
 
-## plugins/inofficial/Gradle2Ant-RunTestsSeparateJVM.xml
+#### Gradle2Ant-RunTestsSeparateJVM.xml
 
 Abstract macros based on the tasks provided by the unofficial Gradle RunTestsSeparateJVMPlugin
 plugin when running jUnit tests eather in separate JVM sequentially or in parallel
