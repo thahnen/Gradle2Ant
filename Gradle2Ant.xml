@@ -120,4 +120,20 @@
                     dir="@{dir}" />
         </sequential>
     </macrodef>
+
+
+    <!-- Macro do add the Gradle wrapper verion as property to the current script -->
+    <macrodef name="gradle.version" description="Load Gradle wrapper version">
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <loadproperties srcfile="@{projectDir}/gradle/gradle-wrapper.properties" />
+            <script>
+                project.setProperty(
+                    'gradle.version',
+                    project.getProperty('distributionURL').split('gradle-')[1].split['-bin'][0]
+                )
+            </script>
+        </sequential>
+    </macrodef>
 </project>
