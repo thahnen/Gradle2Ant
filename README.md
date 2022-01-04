@@ -5,9 +5,23 @@ to enable user to directly use them in simple Ant targets using really simple pa
 
 For more information take a look [here](https://github.com/thahnen/Gradle2Ant)!
 
+## Usage
+
+As Ant cannot import and cache files like Gradle for use in its buildscripts the only option to use
+this library is a local copy. When you're not using this project inside a Git repository just clone
+or download & unpack the repository directly.
+
+When you want to use this project inside another Git repository, instead of downloading a hard copy
+use a Git submodule using the following command:
+
+```bash
+git submodule add https://github.com/thahnen/Gradle2Ant
+```
+
 ## Gradle2Ant.xml
 
-Defines the basic *gradle* macro used in all other macros througout this Ant library and the ones below!
+Defines the basic *gradle* macro used in all other macros througout this Ant library and the ones
+below!
 
 Abstract macros based on the tasks provided by the Gradle Java plugin:
 
@@ -107,7 +121,8 @@ Can be imported into any Ant build script using:
 
 #### Gradle2Ant-EAR.xml
 
-Abstract macro based on the task provided by the Gradle EAR plugin for creating enterprise archives:
+Abstract macro based on the task provided by the Gradle EAR plugin for creating enterprise
+archives:
 
 - ear (macro *gradle.ear*)
 
@@ -118,7 +133,8 @@ Can be imported into any Ant build script using:
 
 #### Gradle2Ant-Groovy.xml
 
-Abstract macros based on the tasks provided by the Gradle Groovy plugin when using Groovy when developing:
+Abstract macros based on the tasks provided by the Gradle Groovy plugin when using Groovy when
+developing:
 
 - compileGroovy (macro *gradle.compileGroovy*)
 - compileTestGroovy (macro *gradle.compileTestGroovy*)
@@ -131,7 +147,8 @@ Can be imported into any Ant build script using:
 
 #### Gradle2Ant-Scala.xml
 
-Abstract macros based on the tasks provided by the Gradle Scala plugin when using Scala when developing:
+Abstract macros based on the tasks provided by the Gradle Scala plugin when using Scala when
+developing:
 
 - compileScala (macro *gradle.compileScala*)
 - compileTestScala (macro *gradle.compileTestScala*)
