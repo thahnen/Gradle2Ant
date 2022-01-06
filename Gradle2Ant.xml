@@ -138,12 +138,10 @@
     </macrodef>
 
 
-    <!-- Macro to kill all (zombie) Gradle processes -->
-    <macrodef name="gradle.kill" description="Kill all (zombie) Gradle processes">
-        <sequential>
-            <exec executable="cmd" failonerror="true">
-                <arg line="/C WMIC PROCESS WHERE ^(commandline like '%%org.gradle%%'^) CALL Terminate" />
-            </exec>
-        </sequential>
-    </macrodef>
+    <!-- Target to kill all (zombie) Gradle processes -->
+    <target name="gradle.kill" description="Kill all (zombie) Gradle processes">
+        <exec executable="wmic.exe" failonerror="true">
+            <arg line="PROCESS WHERE &quot;commandline like &apos;%%org.gradle%%&apos;&quot; CALL Terminate" />
+        </exec>
+    </target>
 </project>
