@@ -32,9 +32,10 @@ Abstract macros based on the tasks provided by the Gradle Java plugin:
 - clean (macro *gradle.clean*)
 - javadoc (macro *gradle.javadoc*)
 
-There is also one additional macro to load the Gradle version from its wrapper into a property:
+There are also two additional macros to work with Gradle as it is:
 
-- macro *gradle.version* into property *gradle.version*
+- macro *gradle.version* (Gradle wrapper version into property *gradle.version*)
+- macro *gradle.kill* (kills all Gradle processes)
 
 Can be imported into any Ant build script using:
 ```xml

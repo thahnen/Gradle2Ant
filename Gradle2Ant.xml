@@ -122,7 +122,7 @@
     </macrodef>
 
 
-    <!-- Macro do add the Gradle wrapper verion as property to the current script -->
+    <!-- Macro to add the Gradle wrapper verion as property to the current script -->
     <macrodef name="gradle.version" description="Load Gradle wrapper version">
         <attribute name="dir"       default="${current.dir}" />
 
@@ -134,6 +134,16 @@
                     project.getProperty('distributionURL').split('gradle-')[1].split['-bin'][0]
                 )
             </script>
+        </sequential>
+    </macrodef>
+
+
+    <!-- Macro to kill all (zombie) Gradle processes -->
+    <macrodef name="gradle.kill" description="Kill all (zombie) Gradle processes">
+        <sequential>
+            <exec executable="cmd" failonerror="true">
+                <arg line="/C WMIC PROCESS WHERE ^(commandline like '%%org.gradle%%'^) CALL Terminate" />
+            </exec>
         </sequential>
     </macrodef>
 </project>
