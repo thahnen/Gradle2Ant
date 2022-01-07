@@ -138,9 +138,9 @@
     </macrodef>
 
 
-    <!-- Target to kill all (zombie) Gradle processes -->
+    <!-- Target to kill all (zombie) Gradle processes (dont fail on error as WMIC os not very stable) -->
     <target name="gradle.kill" description="Kill all (zombie) Gradle processes">
-        <exec executable="wmic.exe" failonerror="true">
+        <exec executable="wmic.exe" failonerror="false">
             <arg line="PROCESS WHERE &quot;commandline like &apos;%%org.gradle%%&apos;&quot; CALL Terminate" />
         </exec>
     </target>
