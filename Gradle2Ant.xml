@@ -127,7 +127,7 @@
         <attribute name="dir"       default="${current.dir}" />
 
         <sequential>
-            <loadproperties srcfile="@{projectDir}/gradle/gradle-wrapper.properties" />
+            <loadproperties srcfile="@{dir}/gradle/gradle-wrapper.properties" />
             <script>
                 project.setProperty(
                     'gradle.version',
