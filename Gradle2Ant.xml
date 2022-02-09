@@ -123,7 +123,7 @@
 
 
     <!-- Macro to add the Gradle wrapper verion as property to the current script -->
-    <macrodef name="gradle.version" description="Load Gradle wrapper version">
+    <macrodef name="gradlew.version" description="Load Gradle wrapper version">
         <attribute name="dir"       default="${current.dir}" />
 
         <sequential>
@@ -134,6 +134,19 @@
                     project.getProperty('distributionURL').split('gradle-')[1].split['-bin'][0]
                 )
             </script>
+        </sequential>
+    </macrodef>
+
+
+    <!-- Macro to run Gradlew Wrapper from command line with non restricting arguments -->
+    <macrodef name="gradlew.cmd" description="Run Gradle Wrapper from command line">
+        <attribute name="args"      default="" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <exec executable="cmd" dir="@{dir}" failonerror="true">
+                <arg line="/C gradlew.bat @{args}" />
+            </exec>
         </sequential>
     </macrodef>
 
