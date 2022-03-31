@@ -128,12 +128,12 @@
 
         <sequential>
             <loadproperties srcfile="@{dir}/gradle/gradle-wrapper.properties" />
-            <script>
+            <script language="javascript"><![CDATA[
                 project.setProperty(
                     'gradle.version',
                     project.getProperty('distributionURL').split('gradle-')[1].split['-bin'][0]
                 )
-            </script>
+            ]]></script>
         </sequential>
     </macrodef>
 
