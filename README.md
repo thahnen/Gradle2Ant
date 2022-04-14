@@ -28,6 +28,7 @@ Abstract macros based on the tasks provided by the Gradle Java plugin:
 - classes (macro *gradle.classes*)
 - testClasses (macro *gradle.testClasses*)
 - jar (macro *gradle.jar*)
+- fatJar (macro *gradle.fatJar*)
 - test (macro *gradle.test*)
 - clean (macro *gradle.clean*)
 - javadoc (macro *gradle.javadoc*)
@@ -35,6 +36,8 @@ Abstract macros based on the tasks provided by the Gradle Java plugin:
 There are also three additional items to work with Gradle as it is:
 
 - macro *gradlew.version* (Gradle wrapper version into property *gradle.version*)
+- macro *gradle.jar.name* (read Gradle Jar name into property *jar.name*)
+- macro *gradle.fatJar.name* (read Gradle fat Jar name into property *fatJar.name*)
 - macro *gradlew.cmd* (run Gradle Wrapper on command line with non restricting arguments)
 - target *gradle.kill* (kills all Gradle processes)
 
@@ -116,6 +119,10 @@ Abstract macro based on the task provided by the Gradle WAR plugin for creating 
 
 - war (macro *gradle.war*)
 
+There are also three additional items to work with Gradle as it is:
+
+- macro *gradle.war.name* (read Gradle War name into property *war.name*)
+
 Can be imported into any Ant build script using:
 ```xml
 <import file="${path.to.libraries}/plugins/official/Gradle2Ant-WAR.xml" />
@@ -127,6 +134,10 @@ Abstract macro based on the task provided by the Gradle EAR plugin for creating 
 archives:
 
 - ear (macro *gradle.ear*)
+
+There are also three additional items to work with Gradle as it is:
+
+- macro *gradle.ear.name* (read Gradle War name into property *ear.name*)
 
 Can be imported into any Ant build script using:
 ```xml

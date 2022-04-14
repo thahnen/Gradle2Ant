@@ -56,6 +56,22 @@
         </sequential>
     </macrodef>
 
+    <!-- Gradle task "fatJar" to create fat JAR archive -->
+    <macrodef name="gradle.fatJar" description="Gradle task 'fatJar'">
+        <attribute name="project"   default="" />
+        <attribute name="args"      default="" />
+        <attribute name="wrapper"   default="gradle" />
+        <attribute name="dir"       default="${current.dir}" />
+
+        <sequential>
+            <gradle task="fatJar"
+                    project="@{project}"
+                    args="@{args}"
+                    wrapper="@{wrapper}"
+                    dir="@{dir}" />
+        </sequential>
+    </macrodef>
+
     <!-- Gradle task "testClasses" to compile test classes -->
     <macrodef name="gradle.testClasses" description="Gradle task 'testClasses'">
         <attribute name="project"   default="" />
@@ -151,7 +167,40 @@
     </macrodef>
 
 
-    <!-- Target to kill all (zombie) Gradle processes (dont fail on error as WMIC os not very stable) -->
+    <!-- Macro to get the generated JAR archive file name -->
+    <scriptdef name="gradle.jar.name" language="javascript" description="">
+        <attribute name="folder" />
+        <![CDATA[
+            var files = (new java.io.File(attributes.get("folder"))).listFiles();
+            for (i = 0; i < files.length; i++) {
+                var fN = files[i].getName();
+                if (fn.indexOf(project.name) !== -1 && fn.indexOf(".jar") !== -1
+                    && fn.indexOf("-fat") === -1) {
+                    project.setProperty("jar.name", fn);
+                    break;
+                }
+            }
+        ]]>
+    </scriptdef>
+
+    <!-- Macro to get the generated fat JAR archive file name -->
+    <scriptdef name="gradle.fatJar.name" language="javascript" description="">
+        <attribute name="folder" />
+        <![CDATA[
+            var files = (new java.io.File(attributes.get("folder"))).listFiles();
+            for (i = 0; i < files.length; i++) {
+                var fN = files[i].getName();
+                if (fn.indexOf(project.name) !== -1 && fn.indexOf(".jar") !== -1
+                    && fn.indexOf("-fat") !== -1) {
+                    project.setProperty("fatJar.name", fn);
+                    break;
+                }
+            }
+        ]]>
+    </scriptdef>
+
+
+    <!-- Target to kill all (zombie) Gradle processes (dont fail on error as WMIC isn't stable) -->
     <target name="gradle.kill" description="Kill all (zombie) Gradle processes">
         <exec executable="wmic.exe" failonerror="false">
             <arg line="PROCESS WHERE &quot;commandline like &apos;%%org.gradle%%&apos;&quot; CALL Terminate" />
