@@ -34,7 +34,7 @@
         <![CDATA[
             var files = (new java.io.File(attributes.get("folder"))).listFiles();
             for (i = 0; i < files.length; i++) {
-                var fN = files[i].getName();
+                var fn = files[i].getName();
                 if (fn.indexOf(project.name) !== -1 && fn.indexOf(".war") !== -1) {
                     project.setProperty("war.name", fn);
                     break;
