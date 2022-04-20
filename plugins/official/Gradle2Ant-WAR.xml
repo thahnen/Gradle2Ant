@@ -29,14 +29,14 @@
 
 
     <!-- Macro to get the generated WAR archive file name -->
-    <scriptdef name="gradle.war.name" language="javascript" description="">
+    <scriptdef name="vGradleWarName" language="javascript" description="">
         <attribute name="folder" />
         <![CDATA[
             var files = (new java.io.File(attributes.get("folder"))).listFiles();
             for (i = 0; i < files.length; i++) {
                 var fn = files[i].getName();
                 if (fn.indexOf(project.name) !== -1 && fn.indexOf(".war") !== -1) {
-                    project.setProperty("war.name", fn);
+                    project.setProperty("gradle.war.name", fn);
                     break;
                 }
             }
