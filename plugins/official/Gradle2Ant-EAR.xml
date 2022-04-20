@@ -31,11 +31,12 @@
     <!-- Macro to get the generated EAR archive file name -->
     <scriptdef name="vGradleEarName" language="javascript" description="">
         <attribute name="folder" />
+        <attribute name="pname" />
         <![CDATA[
             var files = (new java.io.File(attributes.get("folder"))).listFiles();
             for (i = 0; i < files.length; i++) {
                 var fn = files[i].getName();
-                if (fn.indexOf(project.name) !== -1 && fn.indexOf(".ear") !== -1) {
+                if (fn.indexOf(attributes.get("pname")) !== -1 && fn.indexOf(".ear") !== -1) {
                     project.setProperty("gradle.ear.name", fn);
                     break;
                 }
