@@ -167,6 +167,28 @@
     </macrodef>
 
 
+    <!--
+        Macro to find the $buildDir/libs directory as the main Ant script is located inside
+        $projectDir/scripts by default!
+    -->
+    <scriptdef name="vGradleBuildLibsDir" language="javascript" description="">
+        <attribute name="buildxml" />
+        <![CDATA[
+            project.setProperty(
+                "gradle.build.libs.dir",
+                (new java.io.File(
+                    new java.io.File(
+                        (new java.io.File(
+                            attributes.get("buildxml")
+                        )).getParentFile().getParentFile(),
+                        "build"
+                    ),
+                    "libs"
+                )).getAbsolutePath()
+            );
+        ]]>
+    </scriptdef>
+
     <!-- Macro to get the generated JAR archive file name -->
     <scriptdef name="vGradleJarName" language="javascript" description="">
         <attribute name="folder" />

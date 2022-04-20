@@ -36,6 +36,7 @@ Abstract macros based on the tasks provided by the Gradle Java plugin:
 There are also three additional items to work with Gradle as it is:
 
 - macro *gradlew.version* (Gradle wrapper version into property *gradle.version*)
+- macro *vGradleBuildLibsDir* (read Gradle "libs" directory into property *gradle.build.libs.dir*)
 - macro *vGradleJarName* (read Gradle Jar name into property *gradle.jar.name*)
 - macro *vGradleFatJarName* (read Gradle fat Jar name into property *gradle.fatJar.name*)
 - macro *gradlew.cmd* (run Gradle Wrapper on command line with non restricting arguments)
